@@ -1,4 +1,4 @@
-︠de58cd79-87e0-4d83-8f5b-26647dc90bebi︠
+︠de58cd79-87e0-4d83-8f5b-26647dc90beb︠
 %md
 
 # Solving differential equations
@@ -12,7 +12,7 @@
 
 ### Find general solution to Schrodinger's equation
 
-The time-independent Schrodinger's equation in one dimension is $\frac{-\hbar^2}{2m} \frac{d^2}{dx^2}\psi(x) + V(x) = E \psi(x)$.  For an infinite square well of width $L$ the potential energy function is given by
+The time-independent Schrodinger's equation in one dimension is $\frac{-\hbar^2}{2m} \frac{d^2}{dx^2}\psi(x) + V(x)\psi(x) = E \psi(x)$.  For an infinite square well of width $L$ the potential energy function is given by
 
 \[ V(x) = \left\{ \begin{array}{cc} \infty & \text{if } x\ge L\\ 0 & \text{if } 0< x < L \\ \infty & \text{if } x \le 0 \end{array}\right. \]
 
@@ -67,7 +67,7 @@ The boundary conditions require that \(\psi(x,t)\) must be zero at the two walls
 
 The integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant \(A_0\).  In other words, by requiring \(\int_0^L \psi^*(x,t) \psi(x,t) dx = 1\) we can solve for \(A_0\).
 ︡3f92b4f9-b76c-416e-bb90-37ac0ff9330d︡{"done":true,"md":"\n# Integrating functions\n\n- To integrate the function **f(x)** you can either use **f(x).integrate(x)** or **integrate(f(x),x)**.\n- For a definite integral, instead of just specifying the integration variable **x** you should specify the variable *and* the limits **[x,0,L]**.\n- Integrals frequently gives errors asking if a quantity is positive, negative, or zero.  Use **assume()** commands to resolve this question.\n\n\n\n### Deterimine normalization constant\n\nThe integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant \\(A_0\\).  In other words, by requiring \\(\\int_0^L \\psi^*(x,t) \\psi(x,t) dx = 1\\) we can solve for \\(A_0\\)."}
-︠62cc62c9-470b-4a6c-b932-2974e36cd184s︠
+︠62cc62c9-470b-4a6c-b932-2974e36cd184︠
 A_0,n =var('A_0,n ')
 assume(L,'real')  #Assume L is a real number
 assume(L>0)  #Assume L is positive
@@ -100,7 +100,7 @@ pretty_print('The equation for our wave function inside an infinite potential we
 The wave functions for differing values of $n$ should be orthogonal to one another.  This means that $\int_0^L \psi_n^*(x) \psi_m(x) dx = \delta_{mn}$
 
 ︡083c2266-5205-493c-8452-88e77e91a928︡{"done":true,"md":"\n# More integration examples\n\n### Check orthogonality of infinite square well solutions\n\nThe wave functions for differing values of $n$ should be orthogonal to one another.  This means that $\\int_0^L \\psi_n^*(x) \\psi_m(x) dx = \\delta_{mn}$"}
-︠db0ca63e-bf18-44f6-9bf9-676d6751117ds︠
+︠db0ca63e-bf18-44f6-9bf9-676d6751117d︠
 m=var('m')
 assume(m,'integer')
 
@@ -188,7 +188,7 @@ What is the probability of finding the particle in the left half of the box (bet
 
 What is the probability of finding the particle in the left quarter of the box (between $x=0$ and $x=L/4$)?
 ︡d4182c6a-06c9-40b5-a757-961a75c5b370︡{"done":true,"md":"\n# Another example of integration \n- SageMath will leave answers in exact form (e.g. 1/4 or pi) so to get numerical approximations you must use **.n()**\n- You can specify how many digits are returned using **.n(digits=3)**\n\n### Probabilities to find the particle\n\nThe probability to find a particle between \\(x=a\\) and \\(x=b\\) is found by integrating the probability density over the region: \\[\\int_a^b \\psi^*(x) \\psi(x) dx \\]\n\nWhat is the probability to find the particle somewhere in the box?\n\n\nWhat is the probability of finding the particle in the left half of the box (between $x=0$ and $x=L/2$)?\n\n\nWhat is the probability of finding the particle in the left quarter of the box (between $x=0$ and $x=L/4$)?"}
-︠589c7daf-ae4c-4a77-8890-834716f81e88s︠
+︠589c7daf-ae4c-4a77-8890-834716f81e88︠
 probability_somewhere=integrate(psi_well(x,1).conjugate()*psi_well(x,1),[x,0,L])
 
 pretty_print("The probablity to find the particle somewhere is ", probability_somewhere)
@@ -260,7 +260,7 @@ plot_graph = [plot(psi_plot_1(x,t).real(),[x,0,1],color='red',ymin=-1.5,ymax=1.5
 a=animate(plot_graph)
 a.show()
 ︡83e86618-a7b3-429c-9090-0743f812cd70︡{"file":{"filename":"/projects/d18eeda9-38fb-4d20-9a0a-4afa03a182aa/.sage/temp/compute4-us/3913/tmp_S79UYR.webm","show":true,"text":null,"url":"/d18eeda9-38fb-4d20-9a0a-4afa03a182aa/raw/.sage/temp/compute4-us/3913/tmp_S79UYR.webm"},"once":false}︡{"html":"<div align='center'></div>"}︡{"done":true}︡
-︠e6425a97-3598-4dc9-a82f-52e1fa2aec00s︠
+︠e6425a97-3598-4dc9-a82f-52e1fa2aec00︠
 plot_graph_b = [plot(real(psi_plot_1(x,t)*psi_plot_1(x,t).conjugate()),[x,0,1],color='red',ymin=-2,ymax=2) for t in sxrange(0,2,.1)]
 b=animate(plot_graph_b)
 b.show()
@@ -298,7 +298,7 @@ plot_graph_d = [plot(real(psi_super(x,t)*psi_super(x,t).conjugate()),[x,0,1],col
 d=animate(plot_graph_d)
 d.show()
 ︡71b65f79-08de-4ac7-ab43-88db756e04d1︡{"file":{"filename":"/projects/d18eeda9-38fb-4d20-9a0a-4afa03a182aa/.sage/temp/compute4-us/3295/tmp_7pRen8.webm","show":true,"text":null,"url":"/d18eeda9-38fb-4d20-9a0a-4afa03a182aa/raw/.sage/temp/compute4-us/3295/tmp_7pRen8.webm"},"once":false}︡{"html":"<div align='center'></div>"}︡{"done":true}︡
-︠80e87ed7-d414-4cf6-ac6f-b3da4e2f46eci︠
+︠80e87ed7-d414-4cf6-ac6f-b3da4e2f46ec︠
 %md
 
 # For you to try:
@@ -313,15 +313,22 @@ Plot the real part of a superposition of the n=1 and n=3 states $\psi_{super}(x,
 ︠9bb4166e-f979-460c-8aae-377361e618b2i︠
 %md
 # Project Ideas and Problems to Solve
-︡f8ec682e-9786-4da3-824c-f60b07353526︡{"done":true,"md":"# Project Ideas and Problems to Solve"}
-︠fa372037-752b-4a7e-b9a5-5169513575b0s︠
-assume(x>0)
-assume(m>0)
-expr = sqrt(2) * sqrt(x) * sqrt(m)
-expr.canonicalize_radical()
-maxima_methods().rootscontract(expr)
-maxima.radcan(expr,radexpand=false)
-︡231acb3e-a009-41a2-adc8-d91aaeb8e52b︡{"stdout":"sqrt(2)*sqrt(m)*sqrt(x)"}︡{"stdout":"\n"}︡{"stderr":"Error in lines 5-5\nTraceback (most recent call last):\n  File \"/projects/sage/sage-6.10/local/lib/python2.7/site-packages/smc_sagews/sage_server.py\", line 947, in execute\n    exec compile(block+'\\n', '', 'single') in namespace, locals\n  File \"\", line 1, in <module>\nNameError: name 'maxima_methods' is not defined\n"}︡{"done":true}︡
+
+1. Normalize a 50/50 superposition of the n=1 and n=3 state where \(\psi_{super}(x,t)=A_{norm}\left( \psi_{n=1}(x,t)+\psi_{n=3}(x,t)\right)\).  In other words, find the value of \(A_{norm}\) such that \(\int_{-\infty}^{\infty}\psi^*(x,0) \psi(x,0) dx = 1\).
+
+2. Calculate <x> for a particle in a superposition of the n=1 and n=3 states \(\psi_{super}(x,t)=\psi_{n=1}(x,t)+\psi_{n=3}(x,t)\).
+
+3. Use the fact that the uncertainty of an observable is defined as \(\Delta A = \sqrt{< A^2 > - < A >^2}\) to find the uncertainty in the position and momentum for the first three states.
+
+4. Repeat the previous question for the superposition of the n=1 and n=3 states.
+
+
+︡f8ec682e-9786-4da3-824c-f60b07353526︡{"done":true,"md":"# Project Ideas and Problems to Solve\n\n1. Normalize a 50/50 superposition of the n=1 and n=3 state where \\(\\psi_{super}(x,t)=A_{norm}\\left( \\psi_{n=1}(x,t)+\\psi_{n=3}(x,t)\\right)\\).  In other words, find the value of \\(A_{norm}\\) such that \\(\\int_{-\\infty}^{\\infty}\\psi^*(x,0) \\psi(x,0) dx = 1\\).\n\n2. Calculate <x> for a particle in a superposition of the n=1 and n=3 states \\(\\psi_{super}(x,t)=\\psi_{n=1}(x,t)+\\psi_{n=3}(x,t)\\).\n\n3. Use the fact that the uncertainty of an observable is defined as \\(\\Delta A = \\sqrt{< A^2 > - < A >^2}\\) to find the uncertainty in the position and momentum for the first three states.\n\n4. Repeat the previous question for the superposition of the n=1 and n=3 states."}
+︠fa372037-752b-4a7e-b9a5-5169513575b0︠
+
+︡fe6093da-51c9-4838-91e9-00205c2d5a5f︡{"done":true,"error":"maximum time (=30000ms) exceeded - last error true"}︡
+︠97e54337-4489-4f83-845e-20fffb821c35︠
+
 ︠de61fd7d-3903-4558-927a-feede2b403c9︠
 
 
