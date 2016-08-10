@@ -1,7 +1,7 @@
-︠de58cd79-87e0-4d83-8f5b-26647dc90bebi︠
+︠de58cd79-87e0-4d83-8f5b-26647dc90beb︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Solving differential equations
+# Solving differential equations
 
 
 - When solving differential equations it helps to specify which variables are real and which are positive using the **assume()** command.
@@ -21,7 +21,7 @@ The time-independent Schrodinger's equation in one dimension is $\frac{-\hbar^2}
 
 Note: To solve this differential equation we set the potential energy to zero inside the box and rearrange Schrodinger's equation so it has the form \(\frac{-\hbar^2}{2m} \frac{d^2}{dx^2}\psi(x) - E \psi(x) = 0\).
 
-︡ee16f980-f064-4d9d-95c5-8041c9725805︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Solving differential equations\n\n\n- When solving differential equations it helps to specify which variables are real and which are positive using the **assume()** command.\n- You need to specify the independent variable of your function.  In this case we specify that $\\psi$ is a function of $x$.\n- The differential equation is defined using the Python **def** method.\n    - This creates a function which we can differential, integrate, or solve using the differential equation solver.\n- Use **desolve()** to solve the differential equation.  The arguments of **desolve()** are the differential equation to solve, the dependent variable ($\\psi$ in this case), and the independent variable x (specified using **ivar=x** to indicate the independent variable).\n\n### Find general solution to Schrodinger's equation\n\nThe time-independent Schrodinger's equation in one dimension is $\\frac{-\\hbar^2}{2m} \\frac{d^2}{dx^2}\\psi(x) + V(x)\\psi(x) = E \\psi(x)$.  For an infinite square well of width $L$ the potential energy function is given by\n\n\\[ V(x) = \\left\\{ \\begin{array}{cc} \\infty & \\text{if } x\\ge L\\\\ 0 & \\text{if } 0< x < L \\\\ \\infty & \\text{if } x \\le 0 \\end{array}\\right. \\]\n\n\n<img src=\"particle_in_a_box.png\" width=30%>\n\nNote: To solve this differential equation we set the potential energy to zero inside the box and rearrange Schrodinger's equation so it has the form \\(\\frac{-\\hbar^2}{2m} \\frac{d^2}{dx^2}\\psi(x) - E \\psi(x) = 0\\)."}
+︡ee16f980-f064-4d9d-95c5-8041c9725805︡{"done":true,"md":"\n# Solving differential equations\n\n\n- When solving differential equations it helps to specify which variables are real and which are positive using the **assume()** command.\n- You need to specify the independent variable of your function.  In this case we specify that $\\psi$ is a function of $x$.\n- The differential equation is defined using the Python **def** method.\n    - This creates a function which we can differential, integrate, or solve using the differential equation solver.\n- Use **desolve()** to solve the differential equation.  The arguments of **desolve()** are the differential equation to solve, the dependent variable ($\\psi$ in this case), and the independent variable x (specified using **ivar=x** to indicate the independent variable).\n\n### Find general solution to Schrodinger's equation\n\nThe time-independent Schrodinger's equation in one dimension is $\\frac{-\\hbar^2}{2m} \\frac{d^2}{dx^2}\\psi(x) + V(x) = E \\psi(x)$.  For an infinite square well of width $L$ the potential energy function is given by \n\n\\[ V(x) = \\left\\{ \\begin{array}{cc} \\infty & \\text{if } x\\ge L\\\\ 0 & \\text{if } 0< x < L \\\\ \\infty & \\text{if } x \\le 0 \\end{array}\\right. \\] \n\n\n<img src=\"particle_in_a_box.png\" width=30%>\n\nNote: To solve this differential equation we set the potential energy to zero inside the box and rearrange Schrodinger's equation so it has the form \\(\\frac{-\\hbar^2}{2m} \\frac{d^2}{dx^2}\\psi(x) - E \\psi(x) = 0\\)."}
 ︠4654c6ef-100a-47f9-8e67-e454d4135722︠
 psi,m,L=var('psi,m,L')  #Declare wave function, mass, and box length as variables
 
@@ -55,7 +55,7 @@ The boundary conditions require that \(\psi(x,t)\) must be zero at the two walls
 ︠7aa646b3-d723-4034-80dd-3f9149ccf63di︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Integrating functions
+# Integrating functions
 
 - To integrate the function **f(x)** you can either use **f(x).integrate(x)** or **integrate(f(x),x)**.
 - For a definite integral, instead of just specifying the integration variable **x** you should specify the variable *and* the limits **[x,0,L]**.
@@ -66,7 +66,7 @@ The boundary conditions require that \(\psi(x,t)\) must be zero at the two walls
 ### Deterimine normalization constant
 
 The integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant \(A_0\).  In other words, by requiring \(\int_0^L \psi^*(x,t) \psi(x,t) dx = 1\) we can solve for \(A_0\).
-︡3f92b4f9-b76c-416e-bb90-37ac0ff9330d︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Integrating functions\n\n- To integrate the function **f(x)** you can either use **f(x).integrate(x)** or **integrate(f(x),x)**.\n- For a definite integral, instead of just specifying the integration variable **x** you should specify the variable *and* the limits **[x,0,L]**.\n- Integrals frequently gives errors asking if a quantity is positive, negative, or zero.  Use **assume()** commands to resolve this question.\n\n\n\n### Deterimine normalization constant\n\nThe integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant \\(A_0\\).  In other words, by requiring \\(\\int_0^L \\psi^*(x,t) \\psi(x,t) dx = 1\\) we can solve for \\(A_0\\)."}
+︡3f92b4f9-b76c-416e-bb90-37ac0ff9330d︡{"done":true,"md":"\n# Integrating functions\n\n- To integrate the function **f(x)** you can either use **f(x).integrate(x)** or **integrate(f(x),x)**.\n- For a definite integral, instead of just specifying the integration variable **x** you should specify the variable *and* the limits **[x,0,L]**.\n- Integrals frequently gives errors asking if a quantity is positive, negative, or zero.  Use **assume()** commands to resolve this question.\n\n\n\n### Deterimine normalization constant\n\nThe integral of the probability density over some region of space gives the probability of finding the particle in that region.  If we integrate over all possible places the particle might be, the total probability has to be 1 ( which corresponds to 100%).  We can use this fact to find the normalization constant \\(A_0\\).  In other words, by requiring \\(\\int_0^L \\psi^*(x,t) \\psi(x,t) dx = 1\\) we can solve for \\(A_0\\)."}
 ︠62cc62c9-470b-4a6c-b932-2974e36cd184︠
 A_0,n =var('A_0,n ')
 assume(L,'real')  #Assume L is a real number
@@ -114,7 +114,7 @@ pretty_print(' If m is not equal to n, then $\int_0^a\psi_n^*(x) \psi_m(x)dx$ = 
 ︠6d954126-750d-49c2-915f-963a2524d8f6i︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> 2D plots of functions
+# 2D plots of functions
 
 - To plot a function \(f(x)\) vs. \(x\) from \(x=0\) to \(x=2\), use **plot(f(x),[x,0,2])**
 - You can change the color of the line plotted by setting the color argument (e.g. **color='black'**)
@@ -128,7 +128,7 @@ pretty_print(' If m is not equal to n, then $\int_0^a\psi_n^*(x) \psi_m(x)dx$ = 
 The following commands demonstrate how to plot the wave function and probability densities for the first three lowest energy states of the 1D particle-in-a-box.
 
 Since the potential energy (and thus the Hamiltonian) is symmetric about the center of the well (about the point \(x=L/2\)), the wave functions will either be symmetric or antisymmetric about \(x=L/2\).  Since we haven't specified the length of the box we will set \(L=1\) for purposes of plotting.
-︡64bf332f-1019-414f-b686-9961c6b7e605︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> 2D plots of functions\n\n- To plot a function \\(f(x)\\) vs. \\(x\\) from \\(x=0\\) to \\(x=2\\), use **plot(f(x),[x,0,2])**\n- You can change the color of the line plotted by setting the color argument (e.g. **color='black'**)\n- Multiple graphs can be combined into a single plot window by adding the **plot()** commands together.\n- Plots have various properties, such as line color, type of line, points plotted, titles, and axes labels that can be changed\n- Use the **show()** command to display a plot\n- When plotting functions with unspecified variables, set all variables to 1 using **.substitute()**.\n\n### Plot wave function and probabilty density\n\nThe following commands demonstrate how to plot the wave function and probability densities for the first three lowest energy states of the 1D particle-in-a-box.\n\nSince the potential energy (and thus the Hamiltonian) is symmetric about the center of the well (about the point \\(x=L/2\\)), the wave functions will either be symmetric or antisymmetric about \\(x=L/2\\).  Since we haven't specified the length of the box we will set \\(L=1\\) for purposes of plotting."}
+︡64bf332f-1019-414f-b686-9961c6b7e605︡{"done":true,"md":"\n# 2D plots of functions\n\n- To plot a function \\(f(x)\\) vs. \\(x\\) from \\(x=0\\) to \\(x=2\\), use **plot(f(x),[x,0,2])**\n- You can change the color of the line plotted by setting the color argument (e.g. **color='black'**)\n- Multiple graphs can be combined into a single plot window by adding the **plot()** commands together.\n- Plots have various properties, such as line color, type of line, points plotted, titles, and axes labels that can be changed\n- Use the **show()** command to display a plot\n- When plotting functions with unspecified variables, set all variables to 1 using **.substitute()**.\n\n### Plot wave function and probabilty density\n\nThe following commands demonstrate how to plot the wave function and probability densities for the first three lowest energy states of the 1D particle-in-a-box.\n\nSince the potential energy (and thus the Hamiltonian) is symmetric about the center of the well (about the point \\(x=L/2\\)), the wave functions will either be symmetric or antisymmetric about \\(x=L/2\\).  Since we haven't specified the length of the box we will set \\(L=1\\) for purposes of plotting."}
 ︠0ccb04e3-c4b2-4eb0-b7ac-bb3da54ce9a4︠
 psi_well_1(x)=psi_well(x,1).substitute(L=1)  #n = 1 ground state with L=1
 psi_well_2(x)=psi_well(x,2).substitute(L=1)  #n = 2 first excited state with L=1
@@ -218,18 +218,12 @@ Calculate the probability for the particle to be somewhere inside the well, in t
 ︠0d9271fc-999f-4f33-9ba4-b8df90acb961i︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Expanding symbolic answers and obtaining numerical results
+# Expanding symbolic answers and obtaining numerical results
 
 ### Calculating expectation values
 
-- `.expand()` will distribute terms and expand powers in a symbolic expression
-    - Note: When using `.expand()` on an express (rather than a variable), it helps to put parenthese around the expression.
-        - This won't work `3*(x+y).expand()` but `(3*(x+y)).expand()` will work.
-- SageMath keeps results in exact form (e.g. $\sin(\pi/4)$ rather than $0.707$) but you can force SageMath to give an approximate answer using `.n()`
-    - You can specify the number of digits the approximate result should have using `.n(digits=3)`
-
 What is the expected value of the position of the particle $<x>$?
-︡4c19e85d-2194-4e7a-9012-5570bdf36307︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Expanding symbolic answers and obtaining numerical results\n\n### Calculating expectation values\n\n- `.expand()` will distribute terms and expand powers in a symbolic expression\n    - Note: When using `.expand()` on an express (rather than a variable), it helps to put parenthese around the expression.\n        - This won't work `3*(x+y).expand()` but `(3*(x+y)).expand()` will work.\n- SageMath keeps results in exact form (e.g. $\\sin(\\pi/4)$ rather than $0.707$) but you can force SageMath to give an approximate answer using `.n()`\n    - You can specify the number of digits the approximate result should have using `.n(digits=3)`\n\nWhat is the expected value of the position of the particle $<x>$?"}
+︡4c19e85d-2194-4e7a-9012-5570bdf36307︡{"done":true,"md":"\n# Expanding symbolic answers and obtaining numerical results\n\n### Calculating expectation values\n\nWhat is the expected value of the position of the particle $<x>$?"}
 ︠914d2d81-c755-4eb8-8b25-8eb70f5d123b︠
 
 x_exp=integrate(psi_well(x,1).conjugate()*x*psi_well(x,1),[x,0,L]);x_exp  #Expecatation value of position <x>
@@ -318,7 +312,7 @@ Plot the real part of a superposition of the n=1 and n=3 states $\psi_{super}(x,
 ︡7b320d24-e685-4ed8-b7e6-0714dfdf6e37︡
 ︠9bb4166e-f979-460c-8aae-377361e618b2i︠
 %md
-# <img src="sagemathcloud_logo1.png" width="48"> Project Ideas and Problems to Solve
+# Project Ideas and Problems to Solve
 
 1. Normalize a 50/50 superposition of the n=1 and n=3 state where \(\psi_{super}(x,t)=A_{norm}\left( \psi_{n=1}(x,t)+\psi_{n=3}(x,t)\right)\).  In other words, find the value of \(A_{norm}\) such that \(\int_{-\infty}^{\infty}\psi^*(x,0) \psi(x,0) dx = 1\).
 
@@ -329,7 +323,7 @@ Plot the real part of a superposition of the n=1 and n=3 states $\psi_{super}(x,
 4. Repeat the previous question for the superposition of the n=1 and n=3 states.
 
 
-︡f8ec682e-9786-4da3-824c-f60b07353526︡{"done":true,"md":"# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Project Ideas and Problems to Solve\n\n1. Normalize a 50/50 superposition of the n=1 and n=3 state where \\(\\psi_{super}(x,t)=A_{norm}\\left( \\psi_{n=1}(x,t)+\\psi_{n=3}(x,t)\\right)\\).  In other words, find the value of \\(A_{norm}\\) such that \\(\\int_{-\\infty}^{\\infty}\\psi^*(x,0) \\psi(x,0) dx = 1\\).\n\n2. Calculate <x> for a particle in a superposition of the n=1 and n=3 states \\(\\psi_{super}(x,t)=\\psi_{n=1}(x,t)+\\psi_{n=3}(x,t)\\).\n\n3. Use the fact that the uncertainty of an observable is defined as \\(\\Delta A = \\sqrt{< A^2 > - < A >^2}\\) to find the uncertainty in the position and momentum for the first three states.\n\n4. Repeat the previous question for the superposition of the n=1 and n=3 states."}
+︡f8ec682e-9786-4da3-824c-f60b07353526︡{"done":true,"md":"# Project Ideas and Problems to Solve\n\n1. Normalize a 50/50 superposition of the n=1 and n=3 state where \\(\\psi_{super}(x,t)=A_{norm}\\left( \\psi_{n=1}(x,t)+\\psi_{n=3}(x,t)\\right)\\).  In other words, find the value of \\(A_{norm}\\) such that \\(\\int_{-\\infty}^{\\infty}\\psi^*(x,0) \\psi(x,0) dx = 1\\).\n\n2. Calculate <x> for a particle in a superposition of the n=1 and n=3 states \\(\\psi_{super}(x,t)=\\psi_{n=1}(x,t)+\\psi_{n=3}(x,t)\\).\n\n3. Use the fact that the uncertainty of an observable is defined as \\(\\Delta A = \\sqrt{< A^2 > - < A >^2}\\) to find the uncertainty in the position and momentum for the first three states.\n\n4. Repeat the previous question for the superposition of the n=1 and n=3 states."}
 ︠fa372037-752b-4a7e-b9a5-5169513575b0︠
 
 ︡fe6093da-51c9-4838-91e9-00205c2d5a5f︡{"done":true,"error":"maximum time (=30000ms) exceeded - last error true"}︡

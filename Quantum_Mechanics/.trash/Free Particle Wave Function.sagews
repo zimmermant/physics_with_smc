@@ -20,7 +20,7 @@ A free particle is a particle that does not experience any forces along the dire
 ︡45e447c8-9eb3-4a3d-8e56-0fbf04beb833︡{"done":true,"md":"\n# Overview\n\nThis interactive SageMath worksheet will explain how to define variables and functions, evaluate and plot functions, as well as finding derivatives and integrals of symbolic functions.  We will use the quantum mechanical wave function of a free particle as an example.\n\nGoals of this activity:\n\n- Plot the real and imaginary elements of the free particle wave function \\(\\psi(x,t) = A_0 e^{i(kx - \\omega t)}\\)\n- Create an animated plot of the wave function\n- Check that the wave function satisfies the Schrodinger's equation\n\nSchrodinger's equation for a one-dimensional system (e.g. think of an electron confined to a nanowire) is \\[\\frac{-\\hbar^2}{2m}\\frac{\\partial^2}{\\partial x^2} \\psi(x,t) +V(x)\\psi(x,t) = i\\hbar \\frac{\\partial}{\\partial t} \\psi(x,t)\\].\n\nA free particle is a particle that does not experience any forces along the direction of motion and can move freely without any walls.  In truth there is no such thing as a free particle since all particle are confined in some ways but as long as the dimensions of confinement are much much larger than the wavelength of the particle we can treat the particle as free.  An electron confined to a nanowire with a length on the order of millimeters would be a good example of this."}
 ︠8f31c57d-35f4-46be-b359-478dbf70d6bei︠
 %md
-# <img src="sagemathcloud_logo1.png" width="48">  Defining variables and functions
+# Defining variables and functions
 
 
 - All variables must be explicitly declared (except for the variable 'x' and variables used as arguments of functions) using the **var()** command
@@ -33,7 +33,7 @@ A free particle is a particle that does not experience any forces along the dire
 The general solution to Schrodinger's equation is \(\psi(x,t) = A_0 e^{i(kx-\omega t)} + B_0 e^{i(kx + \omega t)}\) where the only difference between the two terms is the sign in front of \(\omega t\), which determines which direction the wave travels.  For the moment we will only look at the first term by setting \(B_0=0\).
 
 
-︡7e2b4081-2bcb-4fd7-85e4-2da86a0e6b4c︡{"done":true,"md":"# <img src=\"sagemathcloud_logo1.png\" width=\"48\">  Defining variables and functions\n\n\n- All variables must be explicitly declared (except for the variable 'x' and variables used as arguments of functions) using the **var()** command\n- Variables cannot start with numbers or contain spaces but they can contain underscores\n- Functions can be evaluated by inserting values for the arguments\n- To evaluate an input cell in this worksheet, put the cursor in the cell and hit Shift+Enter.  The output will be displayed in the cell below the input cell.\n\n#### What is the free particle wave function solution to Schrodinger's equation?\n\nThe general solution to Schrodinger's equation is \\(\\psi(x,t) = A_0 e^{i(kx-\\omega t)} + B_0 e^{i(kx + \\omega t)}\\) where the only difference between the two terms is the sign in front of \\(\\omega t\\), which determines which direction the wave travels.  For the moment we will only look at the first term by setting \\(B_0=0\\)."}
+︡7e2b4081-2bcb-4fd7-85e4-2da86a0e6b4c︡{"done":true,"md":"# Defining variables and functions\n\n\n- All variables must be explicitly declared (except for the variable 'x' and variables used as arguments of functions) using the **var()** command\n- Variables cannot start with numbers or contain spaces but they can contain underscores\n- Functions can be evaluated by inserting values for the arguments\n- To evaluate an input cell in this worksheet, put the cursor in the cell and hit Shift+Enter.  The output will be displayed in the cell below the input cell.\n\n#### What is the free particle wave function solution to Schrodinger's equation?\n\nThe general solution to Schrodinger's equation is \\(\\psi(x,t) = A_0 e^{i(kx-\\omega t)} + B_0 e^{i(kx + \\omega t)}\\) where the only difference between the two terms is the sign in front of \\(\\omega t\\), which determines which direction the wave travels.  For the moment we will only look at the first term by setting \\(B_0=0\\)."}
 ︠1127e0b1-91de-426d-b84c-f6b49ac7e6d3︠
 #This is a calculation input cell.  SageMath will operate on anything typing into this cell and output the results in the cell below.
 #Insert the cursor in this cell and hit Shift-Enter to evaluate it.
@@ -52,7 +52,7 @@ psi(0,0).show()  #Nicer looking output
 ︡ddfc4888-54a2-4128-9cb6-9b71032b18e4︡{"stdout":"A_0*e^(-I*omega*t + I*k*x)\n"}︡{"html":"<div align='center'>$\\displaystyle A_{0} e^{\\left(-i \\, \\omega t + i \\, k x\\right)}$</div>"}︡{"stdout":"A_0\n"}︡{"html":"<div align='center'>$\\displaystyle A_{0}$</div>"}︡{"done":true}︡
 ︠67f4fb97-b8f1-4186-8ae3-acbed99d1196i︠
 %md
-# <img src="sagemathcloud_logo1.png" width="48"> Plotting functions
+# Plotting functions
 
 
 - To replace variables with numerical values you need to use the **.substitute()** command.
@@ -63,7 +63,7 @@ psi(0,0).show()  #Nicer looking output
 #### What does the free particle wave function look like?
 
 The solution to Schrodinger's equation must be a complex function so the wave function must be split into it's real part and imaginary part to plot the function.  The free particle wave function for a one-dimensional system is $\psi(x,t) = e^{i(kx -\omega t)}$.  What do you think the graph of the real part of the wave function will look like?  What do you think the imaginary part of the wave function will look like?  (Hint: What is Euler's identity?)
-︡31e4cbde-63b2-4128-a1da-5647a3cd9c86︡{"done":true,"md":"# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Plotting functions\n\n\n- To replace variables with numerical values you need to use the **.substitute()** command.\n    - To replace all values of the variable $A_0$ with the value $1$, append '.substitute(A_0=1)' to the function name.\n- The real and imaginary parts of a function can be obtained by using **.real()** and **.imag()**.\n- Since SageMath is based on Python, everything is an object.  This means that you can modify properties or act on things using the \"dot\" notation.\n\n#### What does the free particle wave function look like?\n\nThe solution to Schrodinger's equation must be a complex function so the wave function must be split into it's real part and imaginary part to plot the function.  The free particle wave function for a one-dimensional system is $\\psi(x,t) = e^{i(kx -\\omega t)}$.  What do you think the graph of the real part of the wave function will look like?  What do you think the imaginary part of the wave function will look like?  (Hint: What is Euler's identity?)"}
+︡31e4cbde-63b2-4128-a1da-5647a3cd9c86︡{"done":true,"md":"# Plotting functions\n\n\n- To replace variables with numerical values you need to use the **.substitute()** command.\n    - To replace all values of the variable $A_0$ with the value $1$, append '.substitute(A_0=1)' to the function name.\n- The real and imaginary parts of a function can be obtained by using **.real()** and **.imag()**.\n- Since SageMath is based on Python, everything is an object.  This means that you can modify properties or act on things using the \"dot\" notation.\n\n#### What does the free particle wave function look like?\n\nThe solution to Schrodinger's equation must be a complex function so the wave function must be split into it's real part and imaginary part to plot the function.  The free particle wave function for a one-dimensional system is $\\psi(x,t) = e^{i(kx -\\omega t)}$.  What do you think the graph of the real part of the wave function will look like?  What do you think the imaginary part of the wave function will look like?  (Hint: What is Euler's identity?)"}
 ︠f1da144d-c692-454c-8a70-ace0dfd92f06s︠
 #Plotting the real and imaginary parts of the wave function
 psi_plot(x,t) = psi(x,t).substitute(A_0=1,k=1,omega=1)  #Since psi was defined with variable values for A_0, k, and omega, we must use the '.substitute()' command to change the variables into numerical values
@@ -91,15 +91,11 @@ How does your graph for the real part of the wave function compare to the graph 
 ︡754c13d7-7988-4308-b1fa-d8c6fb40295b︡{"done":true}︡
 ︠7261bf00-1a66-4535-b382-80649e55ebf9i︠
 %md
-# <img src="sagemathcloud_logo1.png" width="48"> Animating plots
-- A collection of still images can be combined to create an animation
-- Put all images in a list (square brackets denote a list)
-- Use the list of images as an argument to the `animage(list_of_images_here)` command
-
+# Animating plots
 #### Which way is the free particle wave function moving?
 
 To determine the direction that the wave is moving you can create an animated plot at different times using a short Python script.  You will need to create a list of plot snapshots at different times and then combine them into an animation.
-︡850a3956-fbfa-4a84-9c7b-c654f8bd4c7c︡{"done":true,"md":"# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Animating plots\n- A collection of still images can be combined to create an animation\n- Put all images in a list (square brackets denote a list)\n- Use the list of images as an argument to the `animage(list_of_images_here)` command\n\n#### Which way is the free particle wave function moving?\n\nTo determine the direction that the wave is moving you can create an animated plot at different times using a short Python script.  You will need to create a list of plot snapshots at different times and then combine them into an animation."}
+︡850a3956-fbfa-4a84-9c7b-c654f8bd4c7c︡{"done":true,"md":"# Animating plots\n#### Which way is the free particle wave function moving?\n\nTo determine the direction that the wave is moving you can create an animated plot at different times using a short Python script.  You will need to create a list of plot snapshots at different times and then combine them into an animation."}
 ︠2305c8df-d74e-437e-b902-4de8d7d8f78f︠
 times = sxrange(0,5,0.5)     #Create a list of the times for evaluation.  sxrange() creates a list of numbers from 0 to 5 in steps of 0.5
 plot_graph = []   #Create an empty list to store the plotted graphs at different times
@@ -127,7 +123,7 @@ You can accomplish the same thing with more compact code using Python list compr
 ︠0f7a2418-7f04-48f8-aaba-59697c6a682fi︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Working with complex functions
+# Working with complex functions
 
 
 
@@ -140,7 +136,7 @@ You can accomplish the same thing with more compact code using Python list compr
 The wave function \(\psi(x,t)\) is called the probability amplitude of the particle.  The probility density \(\rho(x,t)\) is equal to the magnitude of the probability amplitude squared.  Since \(\psi(x,t)\) is complex, the magnitude squared _is not the same as_ the square of \(\psi(x,t)\).  You must multiply \(\psi(x,t)\) by it's complex conjugate, which is written as \(\psi^*(x,t)\).  The probability density is then given by \(\rho(x,t) = \psi^*(x,t) \psi(x,t)\).
 
 How would you find the probability to find a particle between two points given the probability density?  In other words, how is the probability density related to the probability to find the particle within some region of space?
-︡42631e2b-08f9-41ad-8028-f41310a8338c︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Working with complex functions\n\n\n\n- Assumptions about variables can be specified using the **assume()** command.  In this case we assume all variables are real.\n- The complex conjugate can be found using **.conjugate()**.\n- **print()** and **pretty_print()** can be used to include text in an output cell.\n\n#### Calculate the probability density for the free particle wave function\n\nThe wave function \\(\\psi(x,t)\\) is called the probability amplitude of the particle.  The probility density \\(\\rho(x,t)\\) is equal to the magnitude of the probability amplitude squared.  Since \\(\\psi(x,t)\\) is complex, the magnitude squared _is not the same as_ the square of \\(\\psi(x,t)\\).  You must multiply \\(\\psi(x,t)\\) by it's complex conjugate, which is written as \\(\\psi^*(x,t)\\).  The probability density is then given by \\(\\rho(x,t) = \\psi^*(x,t) \\psi(x,t)\\).\n\nHow would you find the probability to find a particle between two points given the probability density?  In other words, how is the probability density related to the probability to find the particle within some region of space?"}
+︡42631e2b-08f9-41ad-8028-f41310a8338c︡{"done":true,"md":"\n# Working with complex functions\n\n\n\n- Assumptions about variables can be specified using the **assume()** command.  In this case we assume all variables are real.\n- The complex conjugate can be found using **.conjugate()**.\n- **print()** and **pretty_print()** can be used to include text in an output cell.\n\n#### Calculate the probability density for the free particle wave function\n\nThe wave function \\(\\psi(x,t)\\) is called the probability amplitude of the particle.  The probility density \\(\\rho(x,t)\\) is equal to the magnitude of the probability amplitude squared.  Since \\(\\psi(x,t)\\) is complex, the magnitude squared _is not the same as_ the square of \\(\\psi(x,t)\\).  You must multiply \\(\\psi(x,t)\\) by it's complex conjugate, which is written as \\(\\psi^*(x,t)\\).  The probability density is then given by \\(\\rho(x,t) = \\psi^*(x,t) \\psi(x,t)\\).\n\nHow would you find the probability to find a particle between two points given the probability density?  In other words, how is the probability density related to the probability to find the particle within some region of space?"}
 ︠06b8d361-a48a-4c9b-99e9-c78652a9b107s︠
 #All of these quantities are real.  We need to specify that they are real because we will calculate the complex conjugate of psi(x,t)
 #Without assumption that these variables are real, rho(x,t) below will not simplify to A_0^2
@@ -184,7 +180,7 @@ SageMath also has an autocomplete feature where you can hit the first few letter
 ︠223dfca3-237c-412e-8947-d88cc64ad782i︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Taking derivatives of functions
+# Taking derivatives of functions
 
 - The command **.derivative()** will find the derivative of a symbolic function.
 - The arguments of the **.derivative()** command are the variable of differentiation and the order of the derivative
@@ -195,7 +191,7 @@ SageMath also has an autocomplete feature where you can hit the first few letter
 The output from the **.derivative()** command is another function, which you can evaluate or set equal to another variable.
 
 
-︡64d90a46-5dfd-4543-b4ca-7cfbbf924d6e︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Taking derivatives of functions\n\n- The command **.derivative()** will find the derivative of a symbolic function.\n- The arguments of the **.derivative()** command are the variable of differentiation and the order of the derivative\n    - To find the third derivative of the function $f$ with respect to $x$ use:\n\n           f.derivative(x, 3)\n\nThe output from the **.derivative()** command is another function, which you can evaluate or set equal to another variable."}
+︡64d90a46-5dfd-4543-b4ca-7cfbbf924d6e︡{"done":true,"md":"\n# Taking derivatives of functions\n\n- The command **.derivative()** will find the derivative of a symbolic function.\n- The arguments of the **.derivative()** command are the variable of differentiation and the order of the derivative\n    - To find the third derivative of the function $f$ with respect to $x$ use:\n\n           f.derivative(x, 3)\n\nThe output from the **.derivative()** command is another function, which you can evaluate or set equal to another variable."}
 ︠f1943ac4-a2b4-485b-88f5-092243b71c35s︠
 psi.derivative(x,1)  #Taking the first derivative with respect to x
 psi.derivative(x)  #First order derivative is assumed if no number is given
@@ -231,7 +227,7 @@ Rather than using the "dot" notation, you can treat the **derivative()** command
 ︠8ff1aeeb-8818-4a94-8fd8-ee3741c462a3i︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Defining functionals involved derivatives
+# Defining functionals involved derivatives
 
 Another way to define functions is using Python commands.
 - Definition must start with **def** followed by the name of the function and the arguments of the function.
@@ -244,7 +240,7 @@ Another way to define functions is using Python commands.
 In quantum mechanics, all observable quantities have an associated operator.  These operators require a wave function to operate on.  The momentum operator in one-dimension is defined as \[\hat{p}=-i\hbar \frac{d}{dx}\].  The value of the momentum \(p\) is found by applying the operator to the wave function.  In other words, \[p\psi(x,t) = \hat{p} \psi(x,t)\] or, dividing both sides by \(\psi(x,t)\), \[p=\frac{\hat{p}\psi(x,t)}{\psi(x,t)}.\]  Notice that \(\psi(x,t)\) doesn't cancel out the \(\psi(x,t)\) in the numerator because the numerator is \(\hat{p}\) *operating* on \(\psi(x,t)\) which is different than multiplying the two terms together.
 
 The momentum of a free particle is given by \(\hbar k\), which is what the following calculation demonstrates.
-︡f5aefb66-2845-4922-a09c-cf88a65daa54︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Defining functionals involved derivatives\n\nAnother way to define functions is using Python commands.\n- Definition must start with **def** followed by the name of the function and the arguments of the function.\n- First line of function definition must end with a colon **:**\n- All code included in the function must be indented four spaces (one tab)\n- Last line of function defintion must return resulting equation\n\n#### Momentum Operator\n\nIn quantum mechanics, all observable quantities have an associated operator.  These operators require a wave function to operate on.  The momentum operator in one-dimension is defined as \\[\\hat{p}=-i\\hbar \\frac{d}{dx}\\].  The value of the momentum \\(p\\) is found by applying the operator to the wave function.  In other words, \\[p\\psi(x,t) = \\hat{p} \\psi(x,t)\\] or, dividing both sides by \\(\\psi(x,t)\\), \\[p=\\frac{\\hat{p}\\psi(x,t)}{\\psi(x,t)}.\\]  Notice that \\(\\psi(x,t)\\) doesn't cancel out the \\(\\psi(x,t)\\) in the numerator because the numerator is \\(\\hat{p}\\) *operating* on \\(\\psi(x,t)\\) which is different than multiplying the two terms together.\n\nThe momentum of a free particle is given by \\(\\hbar k\\), which is what the following calculation demonstrates."}
+︡f5aefb66-2845-4922-a09c-cf88a65daa54︡{"done":true,"md":"\n# Defining functionals involved derivatives\n\nAnother way to define functions is using Python commands.\n- Definition must start with **def** followed by the name of the function and the arguments of the function.\n- First line of function definition must end with a colon **:**\n- All code included in the function must be indented four spaces (one tab)\n- Last line of function defintion must return resulting equation\n\n#### Momentum Operator\n\nIn quantum mechanics, all observable quantities have an associated operator.  These operators require a wave function to operate on.  The momentum operator in one-dimension is defined as \\[\\hat{p}=-i\\hbar \\frac{d}{dx}\\].  The value of the momentum \\(p\\) is found by applying the operator to the wave function.  In other words, \\[p\\psi(x,t) = \\hat{p} \\psi(x,t)\\] or, dividing both sides by \\(\\psi(x,t)\\), \\[p=\\frac{\\hat{p}\\psi(x,t)}{\\psi(x,t)}.\\]  Notice that \\(\\psi(x,t)\\) doesn't cancel out the \\(\\psi(x,t)\\) in the numerator because the numerator is \\(\\hat{p}\\) *operating* on \\(\\psi(x,t)\\) which is different than multiplying the two terms together.\n\nThe momentum of a free particle is given by \\(\\hbar k\\), which is what the following calculation demonstrates."}
 ︠641c6190-bac3-4a20-9474-e0484c8524e5︠
 hbar=var('hbar',latex_name=r'\hbar')  #This extra defintion will display the hbar symbol when using .show() or pretty_print
 
@@ -316,7 +312,7 @@ Ener_term.show()     #Show a pretty version of E(psi)
 ︠3b747197-f2cb-494b-b430-b861b94069b9i︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Solving algebraic equations
+# Solving algebraic equations
 
 - When solving equations you must remember the difference between $==$ and $=$.
     - The 'double-equals' sign $==$ is a comparison and is what you should use with the **solve()** command.
@@ -329,7 +325,7 @@ Ener_term.show()     #Show a pretty version of E(psi)
 We've already specified the equation that relates \(k\) and \(\omega\) but the following will show you how to use SageMath to find this relation using Schrodinger's equation.  We'll use the previous definitions of \(H\) and \(E\) along with \(\psi(x,t)\) to find \(k\).
 
 
-︡b7591473-781a-4dac-9431-2846581a5d8d︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Solving algebraic equations\n\n- When solving equations you must remember the difference between $==$ and $=$.\n    - The 'double-equals' sign $==$ is a comparison and is what you should use with the **solve()** command.\n    - The \"single-equals' sign $=$ is an assignment operator and sets the left hand side to the value on the right.\n- The arguments of **solve()** are the equation to solve and the variable to solve for.\n- Type **solve?** into an input cell to see the other options available for the **solve()** command.\n\n#### Find the values of \\(k\\) that satisfy Schrodinger's equation\n\nWe've already specified the equation that relates \\(k\\) and \\(\\omega\\) but the following will show you how to use SageMath to find this relation using Schrodinger's equation.  We'll use the previous definitions of \\(H\\) and \\(E\\) along with \\(\\psi(x,t)\\) to find \\(k\\)."}
+︡b7591473-781a-4dac-9431-2846581a5d8d︡{"done":true,"md":"\n# Solving algebraic equations\n\n- When solving equations you must remember the difference between $==$ and $=$.\n    - The 'double-equals' sign $==$ is a comparison and is what you should use with the **solve()** command.\n    - The \"single-equals' sign $=$ is an assignment operator and sets the left hand side to the value on the right.\n- The arguments of **solve()** are the equation to solve and the variable to solve for.\n- Type **solve?** into an input cell to see the other options available for the **solve()** command.\n\n#### Find the values of \\(k\\) that satisfy Schrodinger's equation\n\nWe've already specified the equation that relates \\(k\\) and \\(\\omega\\) but the following will show you how to use SageMath to find this relation using Schrodinger's equation.  We'll use the previous definitions of \\(H\\) and \\(E\\) along with \\(\\psi(x,t)\\) to find \\(k\\)."}
 ︠f2a653e0-97e0-4a31-bb7e-21281ee055f7s︠
 ans = solve(H(psi(x,t))==E(psi(x,t)),k)
 show(ans)
@@ -356,7 +352,7 @@ Solve the equation \(H \psi(x,t) == E \psi(x,t)\) for **omega** rather than **k*
 ︡f7fee28a-2d24-449b-b2c6-6db5f2bed42c︡
 ︠7b2e100c-147c-4325-97ba-036299055533i︠
 %md
-# <img src="sagemathcloud_logo1.png" width="48"> Extract a solution from a list of answers
+# Extract a solution from a list of answers
 
 
 - The solution from the **solve()** command is a Python list and we can extract elements of the equations from the list.  Python starts indices at 0 rather than 1 so the first element in *ans* is *ans[0]* and the second element is *ans[1]*.  
@@ -366,7 +362,7 @@ Solve the equation \(H \psi(x,t) == E \psi(x,t)\) for **omega** rather than **k*
 #### Double-check that $k$ satisfies the wave equation
 
 To help practice using SageMath, we will take the solution obtained for \(k\) and plug it back into Schrodinger's equation (again).
-︡d79a1b10-626c-415e-ac38-b6d95a8174a3︡{"done":true,"md":"# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Extract a solution from a list of answers\n\n\n- The solution from the **solve()** command is a Python list and we can extract elements of the equations from the list.  Python starts indices at 0 rather than 1 so the first element in *ans* is *ans[0]* and the second element is *ans[1]*.  \n- You can extract the **r**ight **h**and **s**ide of an equation using **.rhs()**.  \n- To see if the equation holds true we need to compare the two sides using a double equals sign (==) and force SageMath to give us a Boolean answer by using **bool()**.\n\n#### Double-check that $k$ satisfies the wave equation\n\nTo help practice using SageMath, we will take the solution obtained for \\(k\\) and plug it back into Schrodinger's equation (again)."}
+︡d79a1b10-626c-415e-ac38-b6d95a8174a3︡{"done":true,"md":"# Extract a solution from a list of answers\n\n\n- The solution from the **solve()** command is a Python list and we can extract elements of the equations from the list.  Python starts indices at 0 rather than 1 so the first element in *ans* is *ans[0]* and the second element is *ans[1]*.  \n- You can extract the **r**ight **h**and **s**ide of an equation using **.rhs()**.  \n- To see if the equation holds true we need to compare the two sides using a double equals sign (==) and force SageMath to give us a Boolean answer by using **bool()**.\n\n#### Double-check that $k$ satisfies the wave equation\n\nTo help practice using SageMath, we will take the solution obtained for \\(k\\) and plug it back into Schrodinger's equation (again)."}
 ︠dcd3832e-8cee-4e5f-ab75-7e787a4a9a8bs︠
 ans[0].show()  #Extract first equation from list of solutions
 ans[1].show()  #Extract second equation from list of solutions
@@ -388,7 +384,7 @@ pretty_print("$k_2$ satisfies the Schrodinger equation:", t_or_f2)    #... and p
 ︠49e6c163-56e3-4280-b666-e965355123eei︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Integrating a function
+# Integrating a function
 
 
 
@@ -403,7 +399,7 @@ pretty_print("$k_2$ satisfies the Schrodinger equation:", t_or_f2)    #... and p
 
 To normalize the wave function, the total probability to find the particle _somewhere_ must equal 1.  Unfortunately with the free particle you run into an issue because the free particle can be anywhere between $-\infty$ and $\infty$.  Using these limits results in a divergent integral.  To get around the infinite integral we will consider the case where the particle is limited to some region between $x=+L$ and $x=-L$ where $L \gg \lambda$ where $\lambda$ is the wavelength of the free particle.
 
-︡b079cdb9-2dda-4c23-9344-336bbd3c842a︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Integrating a function\n\n\n\n- The command to integrate is **.integrate()** or you can apply **integrate()** as a function to the equation.  \n- For an indefinite integral you only need to specify the variable of integration\n- For a definite integral you must specify the variable of integration and the limits.\n     - For example, to integrate the function \\(f(x)\\) from \\(x=0\\) to \\(x=L\\) you'd type:\n             integrate(f(x),[x,0,L])\n\n\n### Normalize the wave function and find the probability to find the free particle between to points in space\n\nTo normalize the wave function, the total probability to find the particle _somewhere_ must equal 1.  Unfortunately with the free particle you run into an issue because the free particle can be anywhere between $-\\infty$ and $\\infty$.  Using these limits results in a divergent integral.  To get around the infinite integral we will consider the case where the particle is limited to some region between $x=+L$ and $x=-L$ where $L \\gg \\lambda$ where $\\lambda$ is the wavelength of the free particle."}
+︡b079cdb9-2dda-4c23-9344-336bbd3c842a︡{"done":true,"md":"\n# Integrating a function\n\n\n\n- The command to integrate is **.integrate()** or you can apply **integrate()** as a function to the equation.  \n- For an indefinite integral you only need to specify the variable of integration\n- For a definite integral you must specify the variable of integration and the limits.\n     - For example, to integrate the function \\(f(x)\\) from \\(x=0\\) to \\(x=L\\) you'd type:\n             integrate(f(x),[x,0,L])\n\n\n### Normalize the wave function and find the probability to find the free particle between to points in space\n\nTo normalize the wave function, the total probability to find the particle _somewhere_ must equal 1.  Unfortunately with the free particle you run into an issue because the free particle can be anywhere between $-\\infty$ and $\\infty$.  Using these limits results in a divergent integral.  To get around the infinite integral we will consider the case where the particle is limited to some region between $x=+L$ and $x=-L$ where $L \\gg \\lambda$ where $\\lambda$ is the wavelength of the free particle."}
 ︠5062d82e-e5ef-4746-8d21-bacb2c71ccb4s︠
 norm_integral_1 = integrate(psi*psi.conjugate(),x); norm_integral_1    #Set the value of the indefnite integral equal to norm1 and then display norm1
 solve(norm_integral_1 ==1,A_0)  #Solve for the values of A_0
@@ -446,14 +442,14 @@ show(psi)
 ︠695179c7-deab-40d4-bc81-e450f4021085i︠
 %md
 
-# <img src="sagemathcloud_logo1.png" width="48"> Project Ideas and Problems to Solve
+# Project Ideas and Problems to Solve
 
 1. Have students find realistic values for masses and velocities for electrons, protons, or neutrons and use de Broglie's equation to find \(k\), \(\omega\), and total energy \(E\).
 
 2. Plot wave functions for electrons and protons on the same plot and have students explain why electron microscopes are used for imaging small objects while 'proton microscopes' aren't as useful.
 
 3. Have students complete homework problems from the end of the textbook chapter.
-︡1a53c8af-f2c9-4357-9522-7b884d3b1faa︡{"done":true,"md":"\n# <img src=\"sagemathcloud_logo1.png\" width=\"48\"> Project Ideas and Problems to Solve\n\n1. Have students find realistic values for masses and velocities for electrons, protons, or neutrons and use de Broglie's equation to find \\(k\\), \\(\\omega\\), and total energy \\(E\\).\n\n2. Plot wave functions for electrons and protons on the same plot and have students explain why electron microscopes are used for imaging small objects while 'proton microscopes' aren't as useful.\n\n3. Have students complete homework problems from the end of the textbook chapter."}
+︡1a53c8af-f2c9-4357-9522-7b884d3b1faa︡{"done":true,"md":"\n# Project Ideas and Problems to Solve\n\n1. Have students find realistic values for masses and velocities for electrons, protons, or neutrons and use de Broglie's equation to find \\(k\\), \\(\\omega\\), and total energy \\(E\\).\n\n2. Plot wave functions for electrons and protons on the same plot and have students explain why electron microscopes are used for imaging small objects while 'proton microscopes' aren't as useful.\n\n3. Have students complete homework problems from the end of the textbook chapter."}
 ︠6b9ba9e2-af6a-4ed9-83a9-27fd8e3206a8︠
 
 
