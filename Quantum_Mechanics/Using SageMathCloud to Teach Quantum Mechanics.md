@@ -63,7 +63,7 @@ This worksheet covers the following SageMath features:
 
 
 ### - Quantum Harmonic Oscillator
-[Quantum Harmonic Oscillator Wave Function](Quantum Harmonic Oscillator.md)
+[Quantum Harmonic Oscillator Wave Function Worksheet](Quantum Harmonic Oscillator.md)
 
 
 This worksheet assume you can integrate, differentiate, and plot simple graphs.  
@@ -74,15 +74,20 @@ The worksheet covers the following features:
 - Adding arrows and text to plots
 - Simplify symbolic expressions
 
+### - Scattering and Tunneling from Step Potentials
+[Scattering and Tunneling Worksheet](Scattering and Tunneling.sagews)
+
+
+
 ## Future Worksheets
 
 
 
-#### - Step Potentials and Tunneling
-
 #### - Angular Momentum
 
 #### - Hydrogen Atom
+[](Need del in different coord systems for this)
+[](Take a look at Sympy libraries)
 
 #### - Quantum Mechanics Matrix Operators in SageMath 
 
