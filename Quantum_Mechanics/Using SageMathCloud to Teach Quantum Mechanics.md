@@ -1,6 +1,6 @@
 ### Introduction
 ---
-This is a beta version of this activity and is missing many parts.  Check back later for a more complete set of tutorials
+This is a work in progress and more activities will be added in the future.  Check back later for a more tutorials
 
 Please feel free to copy these documents and modify them according to your needs.  I encourage you to make use of these in your classes.
 
@@ -58,7 +58,7 @@ This worksheet covers the following SageMath features:
 - Integrating a function
 - Plotting functions
 - Creating an animated plot
-- Approximage numerical results
+- Approximate numerical results
 - Expand symbolic expressions
 
 
@@ -70,18 +70,19 @@ This worksheet assume you can integrate, differentiate, and plot simple graphs.
 The worksheet covers the following features:
 - Solving differential equations
 - Plot dotted, dashed, or solid lines
-- Move plot titles
+- Placement of plot titles
 - Adding arrows and text to plots
 - Simplify symbolic expressions
 
 ### - Scattering and Tunneling from Step Potentials
 [Scattering and Tunneling Worksheet](Scattering and Tunneling.sagews)
 
+The worksheet covers the following features:
+- Solving systems of equations
+- Simplifying symbolic expressions
 
 
 ## Future Worksheets
-
-
 
 #### - Angular Momentum
 
@@ -89,7 +90,7 @@ The worksheet covers the following features:
 [](Need del in different coord systems for this)
 [](Take a look at Sympy libraries)
 
-#### - Quantum Mechanics Matrix Operators in SageMath 
+#### - Quantum Mechanical Matrix Operators in SageMath 
 
 
 
