@@ -7,7 +7,7 @@ Please feel free to copy these documents and modify them according to your needs
 <br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 ### Organization of This Document
-This document contains a series of links to interactive SageMath worksheets.  Each worksheet shows how to use various features of SageMath you might use to teaching first semester high school physics. 
+This document contains a series of links to interactive SageMath worksheets and Jupyter notebooks.  Each worksheet shows how to use various features of SageMath in a calculus-based physics course or how to run VPython in SageMathCloud. 
 
 
 ### Introduction to SageMath
@@ -26,49 +26,43 @@ You can find numerous tutorials online for getting started with SageMath but her
 You are encouraged to edit these worksheets for your students.  This material is released under the CC-BY 4.0 license.  Please modify these documents to fit the needs of your class and share your changes with others.  Many of the earlier sections could be used in a Modern Physics course with a little editing.
 
 **Editing Tips**
-- Everything written in cells that start with %md on the first line are treated as Markdown cells ([Markdown Tutorial](http://www.markdowntutorial.com/))
+- Everything written in cells that start with %md on the first line are treated as Markdown cells (([Markdown Tutorial](http://www.markdowntutorial.com/)))
 - Starting a cell with %html treats everything in the cell as HTML code
 - Double-click on the text of a cell to show the code
 - The hashtag '#' is used in calculation cells to indicate comments that are not parsed by SageMath
 
 See the [ReadMe](../README.md) for directions on how to copy these documents into your SageMathCloud project
 
-# First Semester High School Physics
+## Topics
 ---
 
-#### - Units and Significant Figures 
+#### - Units and Signficant Figures 
 [Units and Significant Figures Interactive Worksheet](Units_and_Sig_Figs.sagews)
 
 This worksheet covers the following SageMath features:
 
-- Performing simple mathematical calculations
-- Getting decimal answers
-- Specifying number of significant figures
-- Working with units
-- Substituting in values for unit conversion
+- Defining variables
+- Obtaining numerical approximate results
+- Using units in SageMath
 - Defining functions
+- Substituting values for variables 
 
-#### Calculations and Graphs
-[Calculations and Graphs Interactive Worksheet](Calculations_and_Graphs.sagews)
+#### - Derivatives and Integrals
+[Derivatives and Integrals Interactive Worksheet](Derivatives_and_Integrals.sagews)
+
 This worksheet covers the following SageMath features:
-- Creating variables
 - Defining functions
-- Plotting graphs
-- Label axes and creating legends on plots
+- Taking derivatives
+- Plotting functions
+- Integrating functions
 
 
 
+## Using VPython in SageMathCloud
 
+[Intro to VPython Jupyter Notebook](Intro_to_VPython_in_SageMathCloud.ipynb)
 
-## VPython in SageMathCloud
-
-In addition to doing computation in SageMath, you can also run Jupyter notebooks in SageMathCloud which allows you to use VPython to help model and visualize objects moving and interacting.  The following interactive notebooks will get you started using VPython in SageMathCloud (You can also run them locally in your own version of Jupyter if you'd like).
-
-**Note: If animation screen does not appear when you run a cell, try restarting the kernel by clicking on the `Kernel` button and selecting `Restart and Clear Output`.  This should fix most issues**
-
-### - Getting Started with VPython
-[Intro to VPython Jupyter Notebook](Intro_to_Vpython_in_SageMathCloud.ipynb)
-
+A short guide on getting started using VPython.
 This Jupyter notebook will cover the following features:
 - How to import VPython
 - How to draw spheres on screen
@@ -86,24 +80,34 @@ This Jupyter notebook will cover the following features:
 
 ### Constant Acceleration in VPython
 [Constant Acceleration Jupyter Notebook](Constant_Acceleration-VPython.ipynb)
+
+This Jupyter notebook covers the following:
 - Create objects moving with constant acceleration
 
 
-### Several demo programs
+### Creating Motion Diagrams
 
-These demos were written by Bruce Sherwood for Matter and Interaction.  These show off some of the capabilities of VPython
+You can create animations and motion diagrams using VPython and Jupyter notebooks using Physutil, a Python script that makes these things easy.
 
-- [Ball and Spring Model](Ball_and_Spring_Model.ipynb)
-- [Two charged particles colliding](Charged_particle_collision.ipynb)
-- [Double pendulum](Double_pendulum.ipynb)
-- [3 Body Orbits](3_Body_Orbit.ipynb)
+This notebook covers the following features:
+- Including an on-screen timer
+- Drawing motion diagrams
+- Using Physutil for graphing
+
+Documentation about Physutil can be found [here](https://github.com/perlatmsu/physutil/wiki)
+
+
+### Bouncing Ball Demo
+
+This notebook is based on the introduction to VPython tutorial on the VPython website.  You can find it [here](http://vpython.org/contents/docs/VPython_Intro.pdf).
+
 
 
 
 
 ## Future Worksheets
 
-#### - Spring Forces
-#### - Solving Systems of Equations
+
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

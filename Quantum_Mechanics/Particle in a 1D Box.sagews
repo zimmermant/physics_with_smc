@@ -1,4 +1,4 @@
-︠de58cd79-87e0-4d83-8f5b-26647dc90bebi︠
+︠de58cd79-87e0-4d83-8f5b-26647dc90beb︠
 %md
 
 # <img src="sagemathcloud_logo1.png" width="48"> Solving differential equations
